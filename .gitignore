@@ -9,3 +9,4 @@ demo/js/lib/matter-dev.js
 demo/js/Examples.js
 test/browser/diffs
 test/node/diffs
+.eslintrc

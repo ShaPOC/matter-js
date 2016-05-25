@@ -79,6 +79,7 @@ var Axes = require('../geometry/Axes');
                     xOffset: 0,
                     yOffset: 0
                 },
+                lineJoin: "miter",
                 lineWidth: 1.5
             }
         };

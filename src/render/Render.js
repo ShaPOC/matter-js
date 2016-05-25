@@ -71,7 +71,8 @@ var Vector = require('../geometry/Vector');
                 showVertexNumbers: false,
                 showConvexHulls: false,
                 showInternalEdges: false,
-                showMousePosition: false
+                showMousePosition: false,
+                showConstraints: true
             }
         };
 
@@ -270,7 +271,8 @@ var Vector = require('../geometry/Vector');
         if (options.showMousePosition)
             Render.mousePosition(render, render.mouse, context);
 
-        Render.constraints(constraints, context);
+        if (options.showConstraints)
+            Render.constraints(constraints, context);
 
         if (options.showBroadphase && engine.broadphase.controller === Grid)
             Render.grid(render, engine.broadphase, context);
@@ -524,6 +526,7 @@ var Vector = require('../geometry/Vector');
                     if (!options.wireframes) {
                         c.fillStyle = part.render.fillStyle;
                         c.lineWidth = part.render.lineWidth;
+                        c.lineJoin = part.render.lineJoin;
                         c.strokeStyle = part.render.strokeStyle;
                         c.fill();
                     } else {
